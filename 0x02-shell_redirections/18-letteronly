@@ -1,2 +1,2 @@
 #!/bin/ban
-grep -i "A[a-z]" /etc/sshd_config
+grep "^[A-Z, a-z]" /etc/sshd_config
