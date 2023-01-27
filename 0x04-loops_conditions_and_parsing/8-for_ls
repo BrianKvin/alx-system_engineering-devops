@@ -3,7 +3,6 @@
 #     where only the part of the name afte rthe first dash is displayed
 #     using for loop but do not display hidden files
 
-for i in $mylist;
-do
+for i in $mylist; do
     echo "$i" | cut -d '-' -f2
 done
