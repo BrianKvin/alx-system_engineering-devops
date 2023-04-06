@@ -1,13 +1,13 @@
 [Process management in linux](https://www.digitalocean.com/community/tutorials/process-management-in-linux)
 
-0x04. Loops, conditions and parsing
-This directory contains files created in response to tasks set forth in Holberton student project "0x04. Loops, conditions and parsing". These scripts demonstrate an introduction to loops and conditional statements in bash.
+- 0x04. Loops, conditions and parsing
+- This directory contains files created in response to tasks set forth in Holberton student project "0x04. Loops, conditions and parsing". These scripts demonstrate an introduction to loops and conditional statements in bash.
 
-Task 0: [0-RSA_public_key.pub]
-Create a RSA key pair
-Task 1: [1-for_holberton_school]
-Write a Bash script that displays Holberton School 10 times
-Task 2: [2-while_holberton_school]
+- Task 0: [0-RSA_public_key.pub]
+- Create a RSA key pair
+- Task 1: [1-for_holberton_school]
+- Write a Bash script that displays Holberton School 10 times
+- Task 2: [2-while_holberton_school]
 Write a Bash script that displays Holberton School 10 times
 Task 3: [3-until_holberton_school]
 Write a Bash script that displays Holberton School 10 times
