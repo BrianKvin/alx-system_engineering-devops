@@ -7,3 +7,8 @@ do
     echo "Best School"
     (( n++))
 done
+# I=0
+# while [ $I -lt 10 ]
+# do 
+# 	echo "Best School"
+# 	I=$((I + 1))
