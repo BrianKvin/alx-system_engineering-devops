@@ -3,27 +3,46 @@
 # The name of the custom HTTP header must be X-Served-By
 # The value of the custom HTTP header is the hostname of the server Nginx is running on
 
-sudo apt-get update
-sudo apt-get -y install nginx
+#sudo apt-get update
+#sudo apt-get -y install nginx
 
 # configure firewall to allow requests through port 80
-sudo ufw allow 'Nginx HTTP'
+#sudo ufw allow 'Nginx HTTP'
 
-sudo mkdir -p /var/www/html
+#sudo mkdir -p /var/www/html
 
 # change permissions to allow easy creation of files in the directory
-sudo chmod -R 755 /var/www
+#sudo chmod -R 755 /var/www
 
 # create the index page
-echo 'Hello World' |sudo tee /var/www/html/index.html
+#echo 'Hello World' |sudo tee /var/www/html/index.html
 
 # create a web page for error 404
-echo "Ceci n' est pas une page" |sudo tee /var/www/html/404.html
+#echo "Ceci n' est pas une page" |sudo tee /var/www/html/404.html
 
 # code to configure single page redirection (/redirect_me) and\
 # add header to display hostname
-string_for_replacement="server_name _;\n\tadd_header X-Served-By \$hostname;\n\trewrite ^\/redirect_me https:\/\/www.blog.ehoneahobed.com permanent;"
-sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+#string_for_replacement="server_name _;\n\tadd_header X-Served-By \$hostname;\n\trewrite ^\/redirect_me https:\/\/www.blog.ehoneahobed.com permanent;"
+#sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
 # restart the web server after updating the settings
+#sudo service nginx restart
+#!/usr/bin/env bash
+# add a custom Nginx response header X-Served-By with the hostname of the server Nginx is running on as value
+
+sudo apt update -y
+sudo apt install nginx -y
+
+sudo ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /var/www/html/index.html
+
+touch /var/www/html/404.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+sudo service nginx start
+
+# adds custom header inside http block in nginx.conf file
+sudo sed -i.bak "12i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+
+# restart nginx server
 sudo service nginx restart
