@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # debugging nginx port 80
 # NB: The flag -s creates a symbolic link, -f deletes the existing file and replaces it
-sed -i '/^http {/a \    server {\n        listen 80 default_server;\n        listen [::]:80 default_server;\n    }' /etc/nginx/nginx.conf
+#sed -i '/^http {/a \    server {\n        listen 80 default_server;\n        listen [::]:80 default_server;\n    }' /etc/nginx/nginx.conf
+#sudo service nginx restart
+
+sudo sed i "s/sites-enabled/sites-available/" /etc/nginx/nginx.conf
 sudo service nginx restart
