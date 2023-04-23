@@ -7,4 +7,5 @@
 
 # ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 6-
 
-ifconfig -a | grep inet | cut -d: -f2 | cut -d" "  -f1
+# ifconfig -a | grep inet | cut -d: -f2 | cut -d" "  -f1
+ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 11-
