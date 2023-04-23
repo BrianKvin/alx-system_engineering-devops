@@ -8,7 +8,11 @@
 # sed -i "\$a8.8.8.8 facebook.com" ~/hosts.new
 # cp -f ~/hosts.new /etc/hosts
 
-cp /etc/hosts ~/hosts.new
-echo "127.0.0.2		localhost" > ~/hosts.new
-echo "8.8.8.8		facebook.com" >> ~/hosts.new
-cp -f ~/hosts.new /etc/hosts
+#cp /etc/hosts ~/hosts.new
+#echo "127.0.0.2		localhost" > ~/hosts.new
+#echo "8.8.8.8		facebook.com" >> ~/hosts.new
+#cp -f ~/hosts.new /etc/hosts
+
+cp /etc/hosts hosts_tmp
+sed -i s/127.*$/127.0.0.2\\tlocalhost\\n8.8.8.8\\tfacebook.com/g hosts_tmp
+cp -f hosts_tmp /etc/hosts
