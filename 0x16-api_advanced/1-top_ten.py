@@ -9,6 +9,7 @@ def top_ten(subreddit):
     import requests
     import sys
 
+"""
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {'User-Agent': 'Mozilla/5.0'}
     try:
@@ -22,3 +23,16 @@ def top_ten(subreddit):
             print("None")
     except Exception:
         print("None")
+"""
+    url = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
+    headers = {"User-Agent": "ChangeMeClient/0.1 by Makaburi_McMaina"}
+
+    res = requests.get(
+            url, headers=headers, allow_redirects=False,
+            params={'limit': '10'})
+
+    if res.status_code == 200:
+        posts = res.json()
+        for post in posts['data']['children']:
+            print(post['data']['title'])
+    print(None)
