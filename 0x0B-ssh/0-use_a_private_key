@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-<<<<<<< HEAD
-#connect to your server using the private key ~/.ssh/school with the user ubuntu.
-ssh -1 ~/.ssh/holberton ubuntu@34.73.76.135
-=======
-# connect to your server using the private key ~/.ssh/school
+
+# Connect to your server using the private key ~/.ssh/school with the user ubuntu
+ssh -i ~/.ssh/school ubuntu@34.73.76.135
+
+# Connect to another server using the same key
 ssh -i ~/.ssh/school ubuntu@3.86.7.131
->>>>>>> 713b6d8328882519542f4a1b282e8e7392701cae
